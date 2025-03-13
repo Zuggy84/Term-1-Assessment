@@ -1,6 +1,20 @@
-#Credits: Mitch Bateup, Sophie Press.
+#Credits: Mitch Bateup, Sophie Press, Thomas Dubojski.
 
+#Setting Up Main Game Colours:
+class colour:
+    purple='\033[95m'
+    cyan='\033[96m'
+    dark_cyan='\033[36m'
+    blue='\033[94m'
+    green='\033[92m'
+    yellow='\033[93m'
+    red='\033[91m'
+    bold='\033[1m'
+    under_line='\033[4m'
+    end='\033[0m'
+    
 #Setting Up Main Game Functions:
+import sys
 import random
 def scramble(game_word):
     scrambled_word=list(game_word)
@@ -19,27 +33,37 @@ word_list_easy_mode=['shine','crazy','have','cigar','wish','were','here','pink',
 word_list_medium_mode=[]
 word_list_hard_mode=[]
 
+#Menu:
+print('<-----Play----->')
+print('<-----Exit----->')
+print()
+selection=input()
+if selection=='exit' or selection=='Exit' or selection=='EXIT':
+    sys.exit()
+
 #Introduction:
-print("<----- Welcome to Mitch's Word Scramble Game! ----->")
-print()
-print('<-----Please Enter Your Name:----->')
-print()
-player_name=input()
-print('Hello {}, Nice of You to Play this Game!'.format(player_name))
+elif selection=='play' or selection=='Play' or selection=='PLAY':
+    print()
+    print("<----- Welcome to Mitch's Word Scramble Game! ----->")
+    print()
+    print('<-----Please Enter Your Name:----->')
+    print()
+    player_name=input()
+    print('Hello {}, Nice of You to Play this Game!'.format(player_name))
 
-#Mode Selection:
-print()
-print('<-----Choose a Difficulty:----->')
-print()
-print('1) Easy Mode - 4/5 Letter Words, You get 6 Attempts, You get 2 Hints on the First 2 Letters for Each Question.')
-print('2) Medium Mode - 6/7 Letter Words, You get 5 Attempts, You get 1 Hint on the First Letter for Each Question.')
-print('3) Hard Mode - 8+ Letter Words, You get 4 Attempts, You get 0 Hints.')
-print()
-print('<-----Enter the Name of the Mode You want to Play:----->')
-mode_selection=input()
+    #Mode Selection:
+    print()
+    print('<-----Choose a Difficulty:----->')
+    print()
+    print('1) Easy Mode - 4/5 Letter Words, You get 6 Attempts, You get 2 Hints on the First 2 Letters for Each Question.')
+    print('2) Medium Mode - 6/7 Letter Words, You get 5 Attempts, You get 1 Hint on the First Letter for Each Question.')
+    print('3) Hard Mode - 8+ Letter Words, You get 4 Attempts, You get 0 Hints.')
+    print()
+    print('<-----Enter the Name of the Mode You want to Play:----->')
+    mode_selection=input()
 
-#Easy Mode:
-if mode_selection=='easy' or mode_selection=='Easy' or mode_selection=='EASY' or mode_selection=='e' or mode_selection=='E' or mode_selection=='1':
+    #Easy Mode:
+    if mode_selection=='easy' or mode_selection=='Easy' or mode_selection=='EASY' or mode_selection=='e' or mode_selection=='E' or mode_selection=='1':
     print()
     print('You have Chosen Easy Mode!')
     print()
@@ -154,10 +178,10 @@ if mode_selection=='easy' or mode_selection=='Easy' or mode_selection=='EASY' or
         print('<-----Your out of Attempts!----->')
         print()
         print('Game Over!')
-                    
-        
-        
-        
+                
+    
+    
+    
 #Medium Mode:
 
 
