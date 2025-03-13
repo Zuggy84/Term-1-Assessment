@@ -64,52 +64,31 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
 
     #Easy Mode:
     if mode_selection=='easy' or mode_selection=='Easy' or mode_selection=='EASY' or mode_selection=='e' or mode_selection=='E' or mode_selection=='1':
-    print()
-    print('You have Chosen Easy Mode!')
-    print()
-    print('<-----Easy Mode Breif:----->')
-    print()
-    print('- You Start with 100 Points.')
-    print('- You get 6 Attempts.')
-    print('- You have an Option to choose 2 Hints on Each Question.')
-    print('- If You try to get more than 2 Hints, You will Lose 10 Points.')
-    print('- Each Correct Guess Earns 20 Points.')
-    print('- Each Incorrect Guess Loses 10 Points.')
-    print('- Each Incorrect Guess Loses 1 Attempt.')
-    print('- You can Skip Questions but You Lose 10 Points.')
-    print()
-    print('Get as Far as You can!')
-    print("Good Luck, Let's Go!")
-    while attempts_easy_mode>0:
-        game_word=random.choice(word_list_easy_mode)
-        shuffled_word=scramble(game_word)
-        scrambled_word=list(game_word)
-        easy_mode_hint_1=scrambled_word[0]
-        easy_mode_hint_2=scrambled_word[1]
+        game_mode_name='Easy'
         print()
-        print('<-----Question:----->')
+        print('You have Chosen Easy Mode!')
         print()
-        print('<-----Score: {}----->'.format(score))
-        print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
-        print("<-----Skip: (Type 'Skip')----->")
-        print("<-----Hint: (Type 'Hint')----->")
+        print('<-----Easy Mode Breif:----->')
         print()
-        print('Scrambled Word:')
-        print(shuffled_word)
+        print('- You Start with 100 Points.')
+        print('- You get 6 Attempts.')
+        print('- You have an Option to choose 2 Hints on Each Question.')
+        print('- If You try to get more than 2 Hints, You will Lose 10 Points.')
+        print('- Each Correct Guess Earns 20 Points.')
+        print('- Each Incorrect Guess Loses 10 Points.')
+        print('- Each Incorrect Guess Loses 1 Attempt.')
+        print('- You can Skip Questions but You Lose 10 Points.')
         print()
-        guess_word=input()
-        if guess_word==game_word:
+        print('Get as Far as You can!')
+        print("Good Luck, Let's Go!")
+        while attempts_easy_mode>0:
+            game_word=random.choice(word_list_easy_mode)
+            shuffled_word=scramble(game_word)
+            scrambled_word=list(game_word)
+            easy_mode_hint_1=scrambled_word[0]
+            easy_mode_hint_2=scrambled_word[1]
             print()
-            print('Correct! +20 Points.')
-            score=score+20
-            words_guessed=words_guessed+1
-        elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
-            print()
-            print('Question Skipped! -10 Points.')
-            score=score-10
-        elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
-            print()
-            print('<-----This is Your First Hint----->')
+            print('<-----Question:----->')
             print()
             print('<-----Score: {}----->'.format(score))
             print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
@@ -118,7 +97,6 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
             print()
             print('Scrambled Word:')
             print(shuffled_word)
-            print('Hint 1: First Letter is {}.'.format(easy_mode_hint_1))
             print()
             guess_word=input()
             if guess_word==game_word:
@@ -132,16 +110,16 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
                 score=score-10
             elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                 print()
-                print('<-----This is Your Second and Last Hint----->')
+                print('<-----This is Your First Hint----->')
                 print()
                 print('<-----Score: {}----->'.format(score))
                 print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
                 print("<-----Skip: (Type 'Skip')----->")
+                print("<-----Hint: (Type 'Hint')----->")
                 print()
                 print('Scrambled Word:')
                 print(shuffled_word)
                 print('Hint 1: First Letter is {}.'.format(easy_mode_hint_1))
-                print('Hint 2: Second Letter is {}.'.format(easy_mode_hint_2))
                 print()
                 guess_word=input()
                 if guess_word==game_word:
@@ -155,8 +133,36 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
                     score=score-10
                 elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                     print()
-                    print('Your Out of Hints! -10 Points.')
-                    score=score-10
+                    print('<-----This is Your Second and Last Hint----->')
+                    print()
+                    print('<-----Score: {}----->'.format(score))
+                    print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
+                    print("<-----Skip: (Type 'Skip')----->")
+                    print()
+                    print('Scrambled Word:')
+                    print(shuffled_word)
+                    print('Hint 1: First Letter is {}.'.format(easy_mode_hint_1))
+                    print('Hint 2: Second Letter is {}.'.format(easy_mode_hint_2))
+                    print()
+                    guess_word=input()
+                    if guess_word==game_word:
+                        print()
+                        print('Correct! +20 Points.')
+                        score=score+20
+                        words_guessed=words_guessed+1
+                    elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                        print()
+                        print('Question Skipped! -10 Points.')
+                        score=score-10
+                    elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                        print()
+                        print('Your Out of Hints! -10 Points.')
+                        score=score-10
+                    else:
+                        print()
+                        print('Incorrect! -10 Points, -1 Attempt.')
+                        score=score-10
+                        attempts_easy_mode=attempts_easy_mode-1
                 else:
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
@@ -167,21 +173,13 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_easy_mode=attempts_easy_mode-1
-        else:
+        if attempts_easy_mode==0:
+            final_attempts_number=attempts_easy_mode
             print()
-            print('Incorrect! -10 Points, -1 Attempt.')
-            score=score-10
-            attempts_easy_mode=attempts_easy_mode-1
-    if attempts_easy_mode==0:
-        final_attempts_number=attempts_easy_mode
-        print()
-        print('<-----Your out of Attempts!----->')
-        print()
-        print('Game Over!')
-                
-    
-    
-    
+            print('<-----Your out of Attempts!----->')
+            print()
+            print('Game Over!')
+
 #Medium Mode:
 
 
@@ -189,6 +187,32 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
 
 
 #End Of Game Summary:
-
+print()
+print('<-----Game Summary----->')
+print()
+print('Player Name: {}'.format(player_name))
+print('Difficulty Played: {}'.format(game_mode_name))
+print('Final Score: {}'.format(score))
+print('Words Guessed: {}'.format(words_guessed))
+print('Attempts Left: {}'.format(final_attempts_number))
+if score<=60 and words_guessed==0:
+    print()
+    print("Maybe this Game isn't for You...")
+elif score>60 and words_guessed==0:
+    print()
+    print('Bad Luck! Try to get Further!')
+elif score>1000 and words_guessed>50:
+    print()
+    print('Wow! Amazing Work.')
+else:
+    print()
+    print('Well Done!')
 
 #Conclusion:
+print()
+print("<-----Thank You for Playing Mitch's Word Scramble Game!----->")
+print()
+print('Goodbye!')
+print()
+goodbye=input()
+print(goodbye)
