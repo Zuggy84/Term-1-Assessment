@@ -176,31 +176,99 @@ elif selection=='play' or selection=='Play' or selection=='PLAY' or selection=='
         if attempts_easy_mode==0:
             final_attempts_number=attempts_easy_mode
             print()
-            print('<-----Your out of Attempts!----->')
+            print('<-----Your Out of Attempts!----->')
             print()
             print('Game Over!')
 
 #Medium Mode:
-if mode_selection=='medium' or mode_selection=='Medium' or mode_selection=='MEDIUM' or mode_selection=='m' or mode_selection=='M' or mode_selection=='2':
-    game_mode_name='Medium'
-    print()
-    print('You have Chosen Medium Mode!')
-    print()
-    print('<-----Medium Mode Breif:----->')
-    print()
-    print('- You Start with 100 Points.')
-    print('- You get 5 Attempts.')
-    print('- You have an Option to choose 1 Hint on Each Question.')
-    print('- If You try to get more than 1 Hint, You will Lose 10 Points.')
-    print('- Each Correct Guess Earns 20 Points.')
-    print('- Each Incorrect Guess Loses 10 Points.')
-    print('- Each Incorrect Guess Loses 1 Attempt.')
-    print('- You can Skip Questions but You Lose 10 Points.')
-    print()
-    print('Get as Far as You can!')
-    print("Good Luck, Let's Go!")
-    while attempts_medium_mode>0:
+    if mode_selection=='medium' or mode_selection=='Medium' or mode_selection=='MEDIUM' or mode_selection=='m' or mode_selection=='M' or mode_selection=='2':
+        game_mode_name='Medium'
         print()
+        print('You have Chosen Medium Mode!')
+        print()
+        print('<-----Medium Mode Breif:----->')
+        print()
+        print('- You Start with 100 Points.')
+        print('- You get 5 Attempts.')
+        print('- You have an Option to choose 1 Hint on Each Question.')
+        print('- If You try to get more than 1 Hint, You will Lose 10 Points.')
+        print('- Each Correct Guess Earns 20 Points.')
+        print('- Each Incorrect Guess Loses 10 Points.')
+        print('- Each Incorrect Guess Loses 1 Attempt.')
+        print('- You can Skip Questions but You Lose 10 Points.')
+        print()
+        print('Get as Far as You can!')
+        print("Good Luck, Let's Go!")
+        while attempts_medium_mode>0:
+            game_word=random.choice(word_list_medium_mode)
+            shuffled_word=scramble(game_word)
+            scrambled_word=list(game_word)
+            medium_mode_hint=scrambled_word[0]
+            print()
+            print('<-----Question:----->')
+            print()
+            print('<-----Score: {}----->'.format(score))
+            print('<-----Attempts Left: {}----->'.format(attempts_medium_mode))
+            print("<-----Skip: (Type 'Skip')----->")
+            print("<-----Hint: (Type 'Hint')----->")
+            print()
+            print('Scrambled Word:')
+            print(shuffled_word)
+            print()
+            guess_word=input()
+            if guess_word==game_word:
+                print()
+                print('Correct! +20 Points.')
+                score=score+20
+                words_guessed=words_guessed+1
+            elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                print()
+                print('Question Skipped! -10 Points.')
+                score=score-10
+            elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                print()
+                print('<-----This is Your First and Last Hint----->')
+                print()
+                print('<-----Score: {}----->'.format(score))
+                print('<-----Attempts Left: {}----->'.format(attempts_medium_mode))
+                print("<-----Skip: (Type 'Skip')----->")
+                print()
+                print('Scrambled Word:')
+                print(shuffled_word)
+                print()
+                print('Hint: First Letter is {}.'.format(medium_mode_hint))
+                print()
+                guess_word=input()
+                if guess_word==game_word:
+                    print()
+                    print('Correct! +20 Points.')
+                    score=score+20
+                    words_guessed=words_guessed+1
+                elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                    print()
+                    print('Question Skipped! -10 Points.')
+                    score=score-10
+                elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                    print()
+                    print('Your Out of Hints! -10 Points.')
+                    score=score-10
+                else:
+                    print()
+                    print('Incorrect! -10 Points, -1 Attempt.')
+                    score=score-10
+                    attempts_medium_mode=attempts_medium_mode-1
+            else:
+                print()
+                print('Incorrect! -10 Points, -1 Attempt.')
+                score=score-10
+                attempts_medium_mode=attempts_medium_mode-1
+        if attempts_medium_mode==0:
+            final_attempts_number=attempts_medium_mode
+            print()
+            print('<-----Your Out of Attempts!----->')
+            print()
+            print('Game Over!')
+                    
 #Hard Mode:
 
 
