@@ -38,11 +38,11 @@ print('<-----Play----->')
 print('<-----Exit----->')
 print()
 selection=input()
-if selection=='exit' or selection=='Exit' or selection=='EXIT':
+if selection=='exit' or selection=='Exit' or selection=='EXIT' or selection=='2':
     sys.exit()
 
 #Introduction:
-elif selection=='play' or selection=='Play' or selection=='PLAY':
+elif selection=='play' or selection=='Play' or selection=='PLAY' or selection=='1':
     print()
     print("<----- Welcome to Mitch's Word Scramble Game! ----->")
     print()
@@ -181,8 +181,26 @@ elif selection=='play' or selection=='Play' or selection=='PLAY':
             print('Game Over!')
 
 #Medium Mode:
-
-
+if mode_selection=='medium' or mode_selection=='Medium' or mode_selection=='MEDIUM' or mode_selection=='m' or mode_selection=='M' or mode_selection=='2':
+    game_mode_name='Medium'
+    print()
+    print('You have Chosen Medium Mode!')
+    print()
+    print('<-----Medium Mode Breif:----->')
+    print()
+    print('- You Start with 100 Points.')
+    print('- You get 5 Attempts.')
+    print('- You have an Option to choose 1 Hint on Each Question.')
+    print('- If You try to get more than 1 Hint, You will Lose 10 Points.')
+    print('- Each Correct Guess Earns 20 Points.')
+    print('- Each Incorrect Guess Loses 10 Points.')
+    print('- Each Incorrect Guess Loses 1 Attempt.')
+    print('- You can Skip Questions but You Lose 10 Points.')
+    print()
+    print('Get as Far as You can!')
+    print("Good Luck, Let's Go!")
+    while attempts_medium_mode>0:
+        print()
 #Hard Mode:
 
 
