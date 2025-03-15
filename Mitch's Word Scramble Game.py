@@ -23,17 +23,17 @@ def scramble(game_word):
 
 #Setting Up Main Variables:
 score=100
-attempts_easy_mode=6
-attempts_medium_mode=5
-attempts_hard_mode=4
+attempts_easy_difficulty=6
+attempts_medium_difficulty=5
+attempts_hard_difficulty=4
 words_guessed=0
 
 #Setting Up Game Word Lists:
-word_list_easy_mode=['shine','crazy','have','cigar','wish','were','here','pink','floyd','dire','sick','alice','minus']
-word_list_medium_mode=[]
-word_list_hard_mode=[]
+word_list_easy_difficulty=['shine','crazy','have','cigar','wish','were','here','pink','floyd','dire','sick','alice','minus']
+word_list_medium_difficulty=[]
+word_list_hard_difficulty=[]
 
-#Menu:
+#Main Menu:
 print('<-----Play----->')
 print('<-----Exit----->')
 print('<-----Credits----->')
@@ -69,35 +69,35 @@ elif game_selection=='credits' or game_selection=='Credits' or game_selection=='
     input()
     sys.exit()
 
-#Introduction:
+#Game Introduction:
 elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' or game_selection=='1':
     print()
     print("<----- Welcome to Mitch's Word Scramble Game! ----->")
     print()
     print('<-----Please Enter Your Name:----->')
     print()
-    player_name=input()
-    print('Hello {}, Nice of You to Play this Game!'.format(player_name))
+    game_player_name=input()
+    print('Hello {}, Nice of You to Play this Game!'.format(game_player_name))
 
-#Mode Selection:
+#Difficulty Selection:
     print()
     print('<-----Choose a Difficulty:----->')
     print()
-    print('1) Easy Mode - 4/5 Letter Words, You get 6 Attempts, You get 2 Hints on the First 2 Letters for Each Question.')
-    print('2) Medium Mode - 6/7 Letter Words, You get 5 Attempts, You get 1 Hint on the First Letter for Each Question.')
-    print('3) Hard Mode - 8+ Letter Words, You get 4 Attempts, You get 0 Hints.')
+    print('1) Easy Difficulty - 4/5 Letter Words, You get 6 Attempts, You get 2 Hints on the First 2 Letters for Each Question.')
+    print('2) Medium Difficulty - 6/7 Letter Words, You get 5 Attempts, You get 1 Hint on the First Letter for Each Question.')
+    print('3) Hard Difficulty - 8+ Letter Words, You get 4 Attempts, You get 0 Hints.')
     print()
-    print('<-----Enter the Name of the Mode You want to Play:----->')
+    print('<-----Enter the Name of the Difficulty You want to Play:----->')
     print()
-    mode_selection=input()
+    difficulty_selection=input()
 
-#Easy Mode:
-    if mode_selection=='easy' or mode_selection=='Easy' or mode_selection=='EASY' or mode_selection=='e' or mode_selection=='E' or mode_selection=='1':
-        game_mode_name='Easy'
+#Easy Difficulty:
+    if difficulty_selection=='easy' or difficulty_selection=='Easy' or difficulty_selection=='EASY' or difficulty_selection=='e' or difficulty_selection=='E' or difficulty_selection=='1':
+        game_difficulty_name='Easy'
         print()
-        print('You have Chosen Easy Mode!')
+        print('You have Chosen Easy Difficulty!')
         print()
-        print('<-----Easy Mode Breif:----->')
+        print('<-----Easy Difficulty Breif:----->')
         print()
         print('- You Start with 100 Points.')
         print('- You get 6 Attempts.')
@@ -110,17 +110,17 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
-        while attempts_easy_mode>0:
-            game_word=random.choice(word_list_easy_mode)
+        while attempts_easy_difficulty>0:
+            game_word=random.choice(word_list_easy_difficulty)
             shuffled_word=scramble(game_word)
             scrambled_word=list(game_word)
-            easy_mode_hint_1=scrambled_word[0]
-            easy_mode_hint_2=scrambled_word[1]
+            easy_difficulty_hint_1=scrambled_word[0]
+            easy_difficulty_hint_2=scrambled_word[1]
             print()
             print('<-----Question:----->')
             print()
             print('<-----Score: {}----->'.format(score))
-            print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
+            print('<-----Attempts Left: {}----->'.format(attempts_easy_difficulty))
             print("<-----Skip: (Type 'Skip')----->")
             print("<-----Hint: (Type 'Hint')----->")
             print()
@@ -142,13 +142,13 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print('<-----This is Your First Hint----->')
                 print()
                 print('<-----Score: {}----->'.format(score))
-                print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
+                print('<-----Attempts Left: {}----->'.format(attempts_easy_difficulty))
                 print("<-----Skip: (Type 'Skip')----->")
                 print("<-----Hint: (Type 'Hint')----->")
                 print()
                 print('Scrambled Word:')
                 print(shuffled_word)
-                print('Hint 1: First Letter is {}.'.format(easy_mode_hint_1))
+                print('Hint 1: First Letter is {}.'.format(easy_difficulty_hint_1))
                 print()
                 guess_word=input()
                 if guess_word==game_word:
@@ -165,13 +165,13 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print('<-----This is Your Second and Last Hint----->')
                     print()
                     print('<-----Score: {}----->'.format(score))
-                    print('<-----Attempts Left: {}----->'.format(attempts_easy_mode))
+                    print('<-----Attempts Left: {}----->'.format(attempts_easy_difficulty))
                     print("<-----Skip: (Type 'Skip')----->")
                     print()
                     print('Scrambled Word:')
                     print(shuffled_word)
-                    print('Hint 1: First Letter is {}.'.format(easy_mode_hint_1))
-                    print('Hint 2: Second Letter is {}.'.format(easy_mode_hint_2))
+                    print('Hint 1: First Letter is {}.'.format(easy_difficulty_hint_1))
+                    print('Hint 2: Second Letter is {}.'.format(easy_difficulty_hint_2))
                     print()
                     guess_word=input()
                     if guess_word==game_word:
@@ -191,27 +191,27 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                         print()
                         print('Incorrect! -10 Points, -1 Attempt.')
                         score=score-10
-                        attempts_easy_mode=attempts_easy_mode-1
+                        attempts_easy_difficulty=attempts_easy_difficulty-1
                 else:
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
                     score=score-10
-                    attempts_easy_mode=attempts_easy_mode-1
+                    attempts_easy_difficulty=attempts_easy_difficulty-1
             else:
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
-                attempts_easy_mode=attempts_easy_mode-1
-        if attempts_easy_mode==0:
-            final_attempts_number=attempts_easy_mode
+                attempts_easy_difficulty=attempts_easy_difficulty-1
+        if attempts_easy_difficulty==0:
+            final_attempts_number=attempts_easy_difficulty
             print()
             print('<-----Your Out of Attempts!----->')
             print()
             print('Game Over!')
 
-#Medium Mode:
-    if mode_selection=='medium' or mode_selection=='Medium' or mode_selection=='MEDIUM' or mode_selection=='m' or mode_selection=='M' or mode_selection=='2':
-        game_mode_name='Medium'
+#Medium Difficulty:
+    if difficulty_selection=='medium' or difficulty_selection=='Medium' or difficulty_selection=='MEDIUM' or difficulty_selection=='m' or difficulty_selection=='M' or difficulty_selection=='2':
+        game_difficulty_name='Medium'
         print()
         print('You have Chosen Medium Mode!')
         print()
@@ -228,16 +228,16 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
-        while attempts_medium_mode>0:
-            game_word=random.choice(word_list_medium_mode)
+        while attempts_medium_difficulty>0:
+            game_word=random.choice(word_list_medium_difficulty)
             shuffled_word=scramble(game_word)
             scrambled_word=list(game_word)
-            medium_mode_hint=scrambled_word[0]
+            medium_difficulty_hint=scrambled_word[0]
             print()
             print('<-----Question:----->')
             print()
             print('<-----Score: {}----->'.format(score))
-            print('<-----Attempts Left: {}----->'.format(attempts_medium_mode))
+            print('<-----Attempts Left: {}----->'.format(attempts_medium_difficulty))
             print("<-----Skip: (Type 'Skip')----->")
             print("<-----Hint: (Type 'Hint')----->")
             print()
@@ -259,13 +259,13 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print('<-----This is Your First and Last Hint----->')
                 print()
                 print('<-----Score: {}----->'.format(score))
-                print('<-----Attempts Left: {}----->'.format(attempts_medium_mode))
+                print('<-----Attempts Left: {}----->'.format(attempts_medium_difficulty))
                 print("<-----Skip: (Type 'Skip')----->")
                 print()
                 print('Scrambled Word:')
                 print(shuffled_word)
                 print()
-                print('Hint: First Letter is {}.'.format(medium_mode_hint))
+                print('Hint: First Letter is {}.'.format(medium_difficulty_hint))
                 print()
                 guess_word=input()
                 if guess_word==game_word:
@@ -285,22 +285,35 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
                     score=score-10
-                    attempts_medium_mode=attempts_medium_mode-1
+                    attempts_medium_difficulty=attempts_medium_difficulty-1
             else:
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
-                attempts_medium_mode=attempts_medium_mode-1
-        if attempts_medium_mode==0:
-            final_attempts_number=attempts_medium_mode
+                attempts_medium_difficulty=attempts_medium_difficulty-1
+        if attempts_medium_difficulty==0:
+            final_attempts_number=attempts_medium_difficulty
             print()
             print('<-----Your Out of Attempts!----->')
             print()
             print('Game Over!')
                     
-#Hard Mode:
+#Hard Difficulty:
 
 
+#Invalid Difficulty Selection on Difficulty Selection:
+    else:
+        print()
+        print('<-----Invalid Difficulty Selection!----->')
+        print("Try Entering a Valid Difficulty Selection: (Type 'Easy' or 'Medium' or 'Hard')")
+        print()
+        print('Goodbye!')
+        print()
+        print('<-----Press Enter to Exit----->')
+        print()
+        input()
+        sys.exit()
+        
 #Invalid Game Selection on Main Menu:
 else:
     print()
@@ -318,8 +331,8 @@ else:
 print()
 print('<-----Game Summary----->')
 print()
-print('Player Name: {}'.format(player_name))
-print('Difficulty Played: {}'.format(game_mode_name))
+print('Player Name: {}'.format(game_player_name))
+print('Difficulty Played: {}'.format(game_difficulty_name))
 print('Final Score: {}'.format(score))
 print('Words Guessed: {}'.format(words_guessed))
 print('Attempts Left: {}'.format(final_attempts_number))
@@ -336,7 +349,7 @@ else:
     print()
     print('Well Done!')
 
-#Conclusion:
+#Game Conclusion:
 print()
 print("<-----Thank You for Playing Mitch's Word Scramble Game!----->")
 print()
