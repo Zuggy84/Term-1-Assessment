@@ -99,6 +99,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('<-----Easy Difficulty Breif:----->')
         print()
+        print('- You will Unscramble 4/5 Letter Words.')
         print('- You Start with 100 Points.')
         print('- You get 6 Attempts.')
         print('- You have an Option to choose 2 Hints on Each Question.')
@@ -213,10 +214,11 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
     elif difficulty_selection=='medium' or difficulty_selection=='Medium' or difficulty_selection=='MEDIUM' or difficulty_selection=='m' or difficulty_selection=='M' or difficulty_selection=='2':
         game_difficulty_name='Medium'
         print()
-        print('You have Chosen Medium Mode!')
+        print('You have Chosen Medium Difficulty!')
         print()
-        print('<-----Medium Mode Breif:----->')
+        print('<-----Medium Difficulty Breif:----->')
         print()
+        print('- You will Unscramble 6/7 Letter Words.')
         print('- You Start with 100 Points.')
         print('- You get 5 Attempts.')
         print('- You have an Option to choose 1 Hint on Each Question.')
@@ -299,6 +301,27 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print('Game Over!')
                     
 #Hard Difficulty:
+    elif difficulty_selection=='hard' or difficulty_selection=='Hard' or difficulty_selection=='HARD' or difficulty_selection=='h' or difficulty_selection=='H' or difficulty_selection=='3':
+        game_difficulty_name='Hard'
+        print()
+        print('You have Chosen Hard Difficulty!')
+        print()
+        print('<-----Hard Difficulty Breif:----->')
+        print()
+        print('- You will Unscramble 8+ Letter Words.')
+        print('- You Start with 100 Points.')
+        print('- You get 4 Attempts.')
+        print('- You have 0 Hints.')
+        print('- If You try to get Hints, You will Lose 10 Points.')
+        print('- Each Correct Guess Earns 20 Points.')
+        print('- Each Incorrect Guess Loses 10 Points.')
+        print('- Each Incorrect Guess Loses 1 Attempt.')
+        print('- You can Skip Questions but You Lose 10 Points.')
+        print()
+        print('Get as Far as You can!')
+        print("Good Luck, Let's Go!")
+        
+        
 
 
 #Invalid Difficulty Selection on Difficulty Selection:
