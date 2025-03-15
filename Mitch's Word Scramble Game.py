@@ -210,7 +210,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print('Game Over!')
 
 #Medium Difficulty:
-    if difficulty_selection=='medium' or difficulty_selection=='Medium' or difficulty_selection=='MEDIUM' or difficulty_selection=='m' or difficulty_selection=='M' or difficulty_selection=='2':
+    elif difficulty_selection=='medium' or difficulty_selection=='Medium' or difficulty_selection=='MEDIUM' or difficulty_selection=='m' or difficulty_selection=='M' or difficulty_selection=='2':
         game_difficulty_name='Medium'
         print()
         print('You have Chosen Medium Mode!')
