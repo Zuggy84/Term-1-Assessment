@@ -320,10 +320,41 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
+        while attempts_hard_difficulty>0:
+            game_word=random.choice(word_list_hard_difficulty)
+            shuffled_word=scramble(game_word)
+            print()
+            print('<-----Question:----->')
+            print()
+            print('<-----Score: {}----->'.format(score))
+            print('<-----Attempts Left: {}----->'.format(attempts_hard_difficulty))
+            print("<-----Skip: (Type 'Skip')----->")
+            print()
+            print('Scrambled Word:')
+            print(shuffled_word)
+            print()
+            guess_word=input()
+            if guess_word==game_word:
+                print()
+                print('Correct! +20 Points.')
+                score=score+20
+                game_words_guessed=game_words_guessed+1
+            elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                print()
+                print('Question Skipped! -10 Points.')
+                score=score-10
+            else:
+                print()
+                print('Incorrect! -10 Points, -1 Attempt.')
+                score=score-10
+                attempts_hard_difficulty=attempts_hard_difficulty-1
+        if attempts_hard_difficulty==0:
+            final_attempts_number=attempts_hard_difficulty
+            print()
+            print('<-----Your Out of Attempts!----->')
+            print()
+            print('Game Over!')
         
-        
-
-
 #Invalid Difficulty Selection on Difficulty Selection:
     else:
         print()
