@@ -1,4 +1,4 @@
-#Credits: Mitch Bateup, Sophie Press, Thomas Dubojski.
+#Credits: Mitch Bateup, Sophie Press, Thomas Dubojski, Caleb Francey, Python Community, Pawan Sainni.
 
 #Setting Up Main Game Colours:
 class colour:
@@ -36,13 +36,41 @@ word_list_hard_mode=[]
 #Menu:
 print('<-----Play----->')
 print('<-----Exit----->')
+print('<-----Credits----->')
 print()
-selection=input()
-if selection=='exit' or selection=='Exit' or selection=='EXIT' or selection=='2':
+print('<-----Enter the Name of the Option You want to Select:----->')
+print()
+game_selection=input()
+if game_selection=='exit' or game_selection=='Exit' or game_selection=='EXIT' or game_selection=='2':
+    print()
+    print('Goodbye!')
+    print()
+    print('<-----Press Enter to Exit----->')
+    print()
+    input()
+    sys.exit()
+elif game_selection=='credits' or game_selection=='Credits' or game_selection=='CREDITS' or game_selection=='3':
+    print()
+    print('<-----Credits----->')
+    print()
+    print('1) Mitch Bateup - Game Creator, Programmer, Designer, Engineer and Game Tester.')
+    print('2) Sophie Press - Idea Creator, Suggestions and Feedback Provider.')
+    print('3) Thomas Dubojski - Resource Assistant, Feedback Provider.')
+    print('4) Caleb Francey - Resource Assistant, Feedback Provider.')
+    print('5) Pawan Sainni - Teacher, Code Provider.')
+    print('6) Python Community - Python Programming Language.')
+    print()
+    print('<-----Special Thanks to the Above People and the Python Community for Their Contributions to this Game!----->')
+    print()
+    print('Goodbye!')
+    print()
+    print('<-----Press Enter to Exit----->')
+    print()
+    input()
     sys.exit()
 
 #Introduction:
-elif selection=='play' or selection=='Play' or selection=='PLAY' or selection=='1':
+elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' or game_selection=='1':
     print()
     print("<----- Welcome to Mitch's Word Scramble Game! ----->")
     print()
@@ -51,7 +79,7 @@ elif selection=='play' or selection=='Play' or selection=='PLAY' or selection=='
     player_name=input()
     print('Hello {}, Nice of You to Play this Game!'.format(player_name))
 
-    #Mode Selection:
+#Mode Selection:
     print()
     print('<-----Choose a Difficulty:----->')
     print()
@@ -60,9 +88,10 @@ elif selection=='play' or selection=='Play' or selection=='PLAY' or selection=='
     print('3) Hard Mode - 8+ Letter Words, You get 4 Attempts, You get 0 Hints.')
     print()
     print('<-----Enter the Name of the Mode You want to Play:----->')
+    print()
     mode_selection=input()
 
-    #Easy Mode:
+#Easy Mode:
     if mode_selection=='easy' or mode_selection=='Easy' or mode_selection=='EASY' or mode_selection=='e' or mode_selection=='E' or mode_selection=='1':
         game_mode_name='Easy'
         print()
@@ -272,6 +301,19 @@ elif selection=='play' or selection=='Play' or selection=='PLAY' or selection=='
 #Hard Mode:
 
 
+#Invalid Game Selection on Main Menu:
+else:
+    print()
+    print('<-----Invalid Game Selection!----->')
+    print("Try Entering a Valid Game Selection: (Type 'Play' or 'Exit' or 'Credits')")
+    print()
+    print('Goodbye!')
+    print()
+    print('<-----Press Enter to Exit----->')
+    print()
+    input()
+    sys.exit()
+    
 #End Of Game Summary:
 print()
 print('<-----Game Summary----->')
@@ -299,4 +341,8 @@ print()
 print("<-----Thank You for Playing Mitch's Word Scramble Game!----->")
 print()
 print('Goodbye!')
+print()
+print('<-----Press Enter to Exit----->')
+print()
+input()
 sys.exit()
