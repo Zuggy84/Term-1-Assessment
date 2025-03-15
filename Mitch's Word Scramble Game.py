@@ -26,7 +26,7 @@ score=100
 attempts_easy_difficulty=6
 attempts_medium_difficulty=5
 attempts_hard_difficulty=4
-words_guessed=0
+game_words_guessed=0
 
 #Setting Up Game Word Lists:
 word_list_easy_difficulty=['shine','crazy','have','cigar','wish','were','here','pink','floyd','dire','sick','alice','minus']
@@ -132,7 +132,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print()
                 print('Correct! +20 Points.')
                 score=score+20
-                words_guessed=words_guessed+1
+                game_words_guessed=game_words_guessed+1
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                 print()
                 print('Question Skipped! -10 Points.')
@@ -155,7 +155,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print()
                     print('Correct! +20 Points.')
                     score=score+20
-                    words_guessed=words_guessed+1
+                    game_words_guessed=game_words_guessed+1
                 elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                     print()
                     print('Question Skipped! -10 Points.')
@@ -178,7 +178,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                         print()
                         print('Correct! +20 Points.')
                         score=score+20
-                        words_guessed=words_guessed+1
+                        game_words_guessed=game_words_guessed+1
                     elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                         print()
                         print('Question Skipped! -10 Points.')
@@ -249,7 +249,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print()
                 print('Correct! +20 Points.')
                 score=score+20
-                words_guessed=words_guessed+1
+                game_words_guessed=game_words_guessed+1
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                 print()
                 print('Question Skipped! -10 Points.')
@@ -272,7 +272,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print()
                     print('Correct! +20 Points.')
                     score=score+20
-                    words_guessed=words_guessed+1
+                    game_words_guessed=game_words_guessed+1
                 elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                     print()
                     print('Question Skipped! -10 Points.')
@@ -334,15 +334,15 @@ print()
 print('Player Name: {}'.format(game_player_name))
 print('Difficulty Played: {}'.format(game_difficulty_name))
 print('Final Score: {}'.format(score))
-print('Words Guessed: {}'.format(words_guessed))
+print('Words Guessed: {}'.format(game_words_guessed))
 print('Attempts Left: {}'.format(final_attempts_number))
-if score<=60 and words_guessed==0:
+if score<=60 and game_words_guessed==0:
     print()
     print("Maybe this Game isn't for You...")
-elif score>60 and words_guessed==0:
+elif score>60 and game_words_guessed==0:
     print()
     print('Bad Luck! Try to get Further!')
-elif score>1000 and words_guessed>50:
+elif score>1000 and game_words_guessed>50:
     print()
     print('Wow! Amazing Work.')
 else:
