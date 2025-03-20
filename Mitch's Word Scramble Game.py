@@ -83,6 +83,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
     game_player_name=input()
     os.system('cls')
     print('Hello {}, Nice of You to Play this Game!'.format(game_player_name))
+    print()
+    print('<-----Press Enter to Continue----->')
+    print()
+    input()
 
 #Difficulty Selection:
     print()
@@ -117,6 +121,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
+        print()
+        print('<-----Press Enter to Continue----->')
+        print()
+        input()
         while attempts_easy_difficulty>0:
             os.system('cls')
             game_word=random.choice(word_list_easy_difficulty)
@@ -142,11 +150,19 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print('Correct! +20 Points.')
                 score=score+20
                 game_words_guessed=game_words_guessed+1
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                 os.system('cls')
                 print()
                 print('Question Skipped! -10 Points.')
                 score=score-10
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
             elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                 os.system('cls')
                 print()
@@ -168,11 +184,19 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print('Correct! +20 Points.')
                     score=score+20
                     game_words_guessed=game_words_guessed+1
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
                 elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                     os.system('cls')
                     print()
                     print('Question Skipped! -10 Points.')
                     score=score-10
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
                 elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                     os.system('cls')
                     print()
@@ -194,34 +218,58 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                         print('Correct! +20 Points.')
                         score=score+20
                         game_words_guessed=game_words_guessed+1
+                        print()
+                        print('<-----Press Enter to Continue----->')
+                        print()
+                        input()
                     elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                         os.system('cls')
                         print()
                         print('Question Skipped! -10 Points.')
                         score=score-10
+                        print()
+                        print('<-----Press Enter to Continue----->')
+                        print()
+                        input()
                     elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                         os.system('cls')
                         print()
                         print('Your Out of Hints! -10 Points.')
                         score=score-10
+                        print()
+                        print('<-----Press Enter to Continue----->')
+                        print()
+                        input()
                     else:
                         os.system('cls')
                         print()
                         print('Incorrect! -10 Points, -1 Attempt.')
                         score=score-10
                         attempts_easy_difficulty=attempts_easy_difficulty-1
+                        print()
+                        print('<-----Press Enter to Continue----->')
+                        print()
+                        input()
                 else:
                     os.system('cls')
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
                     score=score-10
                     attempts_easy_difficulty=attempts_easy_difficulty-1
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
             else:
                 os.system('cls')
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_easy_difficulty=attempts_easy_difficulty-1
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
         if attempts_easy_difficulty==0:
             os.system('cls')
             final_attempts_number=attempts_easy_difficulty
@@ -229,6 +277,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print('<-----Your Out of Attempts!----->')
             print()
             print('Game Over!')
+            print()
+            print('<-----Press Enter to Continue----->')
+            print()
+            input()
 
 #Medium Difficulty:
     elif difficulty_selection=='medium' or difficulty_selection=='Medium' or difficulty_selection=='MEDIUM' or difficulty_selection=='m' or difficulty_selection=='M' or difficulty_selection=='2':
@@ -251,6 +303,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
+        print()
+        print('<-----Press Enter to Continue----->')
+        print()
+        input()
         while attempts_medium_difficulty>0:
             os.system('cls')
             game_word=random.choice(word_list_medium_difficulty)
@@ -275,11 +331,19 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print('Correct! +20 Points.')
                 score=score+20
                 game_words_guessed=game_words_guessed+1
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                 os.system('cls')
                 print()
                 print('Question Skipped! -10 Points.')
                 score=score-10
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
             elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                 os.system('cls')
                 print()
@@ -301,28 +365,48 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print('Correct! +20 Points.')
                     score=score+20
                     game_words_guessed=game_words_guessed+1
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
                 elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                     os.system('cls')
                     print()
                     print('Question Skipped! -10 Points.')
                     score=score-10
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
                 elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
                     os.system('cls')
                     print()
                     print('Your Out of Hints! -10 Points.')
                     score=score-10
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
                 else:
                     os.system('cls')
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
                     score=score-10
                     attempts_medium_difficulty=attempts_medium_difficulty-1
+                    print()
+                    print('<-----Press Enter to Continue----->')
+                    print()
+                    input()
             else:
                 os.system('cls')
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_medium_difficulty=attempts_medium_difficulty-1
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
         if attempts_medium_difficulty==0:
             os.system('cls')
             final_attempts_number=attempts_medium_difficulty
@@ -330,6 +414,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print('<-----Your Out of Attempts!----->')
             print()
             print('Game Over!')
+            print()
+            print('<-----Press Enter to Continue----->')
+            print()
+            input()
                     
 #Hard Difficulty:
     elif difficulty_selection=='hard' or difficulty_selection=='Hard' or difficulty_selection=='HARD' or difficulty_selection=='h' or difficulty_selection=='H' or difficulty_selection=='3':
@@ -352,6 +440,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print()
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
+        print()
+        print('<-----Press Enter to Continue----->')
+        print()
+        input()
         while attempts_hard_difficulty>0:
             os.system('cls')
             game_word=random.choice(word_list_hard_difficulty)
@@ -373,17 +465,29 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print('Correct! +20 Points.')
                 score=score+20
                 game_words_guessed=game_words_guessed+1
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
                 os.system('cls')
                 print()
                 print('Question Skipped! -10 Points.')
                 score=score-10
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
             else:
                 os.system('cls')
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_hard_difficulty=attempts_hard_difficulty-1
+                print()
+                print('<-----Press Enter to Continue----->')
+                print()
+                input()
         if attempts_hard_difficulty==0:
             os.system('cls')
             final_attempts_number=attempts_hard_difficulty
@@ -391,6 +495,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print('<-----Your Out of Attempts!----->')
             print()
             print('Game Over!')
+            print()
+            print('<-----Press Enter to Continue----->')
+            print()
+            input()
         
 #Invalid Difficulty Selection on Difficulty Selection:
     else:
@@ -421,7 +529,7 @@ else:
     sys.exit()
     
 #End Of Game Summary:
-os.system('cls')  
+os.system('cls')
 print()
 print('<-----Game Summary----->')
 print()
@@ -442,6 +550,10 @@ elif score>1000 and game_words_guessed>50:
 else:
     print()
     print('Well Done!')
+    print()
+    print('<-----Press Enter to Continue----->')
+    print()
+    input()
 
 #Game Conclusion:
 print()
