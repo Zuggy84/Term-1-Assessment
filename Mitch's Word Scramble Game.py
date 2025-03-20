@@ -15,6 +15,7 @@ class colour:
     
 #Setting Up Main Game Functions:
 import sys
+import os
 import random
 def scramble(game_word):
     scrambled_word=list(game_word)
@@ -42,6 +43,7 @@ print('<-----Enter the Name of the Option You want to Select:----->')
 print()
 game_selection=input()
 if game_selection=='exit' or game_selection=='Exit' or game_selection=='EXIT' or game_selection=='2':
+    os.system('cls')
     print()
     print('Goodbye!')
     print()
@@ -50,6 +52,7 @@ if game_selection=='exit' or game_selection=='Exit' or game_selection=='EXIT' or
     input()
     sys.exit()
 elif game_selection=='credits' or game_selection=='Credits' or game_selection=='CREDITS' or game_selection=='3':
+    os.system('cls')
     print()
     print('<-----Credits----->')
     print()
@@ -71,12 +74,14 @@ elif game_selection=='credits' or game_selection=='Credits' or game_selection=='
 
 #Game Introduction:
 elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' or game_selection=='1':
+    os.system('cls')
     print()
     print("<----- Welcome to Mitch's Word Scramble Game! ----->")
     print()
     print('<-----Please Enter Your Name:----->')
     print()
     game_player_name=input()
+    os.system('cls')
     print('Hello {}, Nice of You to Play this Game!'.format(game_player_name))
 
 #Difficulty Selection:
@@ -93,6 +98,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
 
 #Easy Difficulty:
     if difficulty_selection=='easy' or difficulty_selection=='Easy' or difficulty_selection=='EASY' or difficulty_selection=='e' or difficulty_selection=='E' or difficulty_selection=='1':
+        os.system('cls')
         game_difficulty_name='Easy'
         print()
         print('You have Chosen Easy Difficulty!')
@@ -112,6 +118,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
         while attempts_easy_difficulty>0:
+            os.system('cls')
             game_word=random.choice(word_list_easy_difficulty)
             shuffled_word=scramble(game_word)
             scrambled_word=list(game_word)
@@ -130,15 +137,18 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print()
             guess_word=input()
             if guess_word==game_word:
+                os.system('cls')
                 print()
                 print('Correct! +20 Points.')
                 score=score+20
                 game_words_guessed=game_words_guessed+1
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                os.system('cls')
                 print()
                 print('Question Skipped! -10 Points.')
                 score=score-10
             elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                os.system('cls')
                 print()
                 print('<-----This is Your First Hint----->')
                 print()
@@ -153,15 +163,18 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print()
                 guess_word=input()
                 if guess_word==game_word:
+                    os.system('cls')
                     print()
                     print('Correct! +20 Points.')
                     score=score+20
                     game_words_guessed=game_words_guessed+1
                 elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                    os.system('cls')
                     print()
                     print('Question Skipped! -10 Points.')
                     score=score-10
                 elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                    os.system('cls')
                     print()
                     print('<-----This is Your Second and Last Hint----->')
                     print()
@@ -176,34 +189,41 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     print()
                     guess_word=input()
                     if guess_word==game_word:
+                        os.system('cls')
                         print()
                         print('Correct! +20 Points.')
                         score=score+20
                         game_words_guessed=game_words_guessed+1
                     elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                        os.system('cls')
                         print()
                         print('Question Skipped! -10 Points.')
                         score=score-10
                     elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                        os.system('cls')
                         print()
                         print('Your Out of Hints! -10 Points.')
                         score=score-10
                     else:
+                        os.system('cls')
                         print()
                         print('Incorrect! -10 Points, -1 Attempt.')
                         score=score-10
                         attempts_easy_difficulty=attempts_easy_difficulty-1
                 else:
+                    os.system('cls')
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
                     score=score-10
                     attempts_easy_difficulty=attempts_easy_difficulty-1
             else:
+                os.system('cls')
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_easy_difficulty=attempts_easy_difficulty-1
         if attempts_easy_difficulty==0:
+            os.system('cls')
             final_attempts_number=attempts_easy_difficulty
             print()
             print('<-----Your Out of Attempts!----->')
@@ -212,6 +232,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
 
 #Medium Difficulty:
     elif difficulty_selection=='medium' or difficulty_selection=='Medium' or difficulty_selection=='MEDIUM' or difficulty_selection=='m' or difficulty_selection=='M' or difficulty_selection=='2':
+        os.system('cls')
         game_difficulty_name='Medium'
         print()
         print('You have Chosen Medium Difficulty!')
@@ -231,6 +252,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
         while attempts_medium_difficulty>0:
+            os.system('cls')
             game_word=random.choice(word_list_medium_difficulty)
             shuffled_word=scramble(game_word)
             scrambled_word=list(game_word)
@@ -248,15 +270,18 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print()
             guess_word=input()
             if guess_word==game_word:
+                os.system('cls')
                 print()
                 print('Correct! +20 Points.')
                 score=score+20
                 game_words_guessed=game_words_guessed+1
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                os.system('cls')
                 print()
                 print('Question Skipped! -10 Points.')
                 score=score-10
             elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                os.system('cls')
                 print()
                 print('<-----This is Your First and Last Hint----->')
                 print()
@@ -271,29 +296,35 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                 print()
                 guess_word=input()
                 if guess_word==game_word:
+                    os.system('cls')
                     print()
                     print('Correct! +20 Points.')
                     score=score+20
                     game_words_guessed=game_words_guessed+1
                 elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                    os.system('cls')
                     print()
                     print('Question Skipped! -10 Points.')
                     score=score-10
                 elif guess_word=='hint' or guess_word=='Hint' or guess_word=='HINT':
+                    os.system('cls')
                     print()
                     print('Your Out of Hints! -10 Points.')
                     score=score-10
                 else:
+                    os.system('cls')
                     print()
                     print('Incorrect! -10 Points, -1 Attempt.')
                     score=score-10
                     attempts_medium_difficulty=attempts_medium_difficulty-1
             else:
+                os.system('cls')
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_medium_difficulty=attempts_medium_difficulty-1
         if attempts_medium_difficulty==0:
+            os.system('cls')
             final_attempts_number=attempts_medium_difficulty
             print()
             print('<-----Your Out of Attempts!----->')
@@ -302,6 +333,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
                     
 #Hard Difficulty:
     elif difficulty_selection=='hard' or difficulty_selection=='Hard' or difficulty_selection=='HARD' or difficulty_selection=='h' or difficulty_selection=='H' or difficulty_selection=='3':
+        os.system('cls')
         game_difficulty_name='Hard'
         print()
         print('You have Chosen Hard Difficulty!')
@@ -321,6 +353,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         print('Get as Far as You can!')
         print("Good Luck, Let's Go!")
         while attempts_hard_difficulty>0:
+            os.system('cls')
             game_word=random.choice(word_list_hard_difficulty)
             shuffled_word=scramble(game_word)
             print()
@@ -335,20 +368,24 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
             print()
             guess_word=input()
             if guess_word==game_word:
+                os.system('cls')
                 print()
                 print('Correct! +20 Points.')
                 score=score+20
                 game_words_guessed=game_words_guessed+1
             elif guess_word=='skip' or guess_word=='Skip' or guess_word=='SKIP':
+                os.system('cls')
                 print()
                 print('Question Skipped! -10 Points.')
                 score=score-10
             else:
+                os.system('cls')
                 print()
                 print('Incorrect! -10 Points, -1 Attempt.')
                 score=score-10
                 attempts_hard_difficulty=attempts_hard_difficulty-1
         if attempts_hard_difficulty==0:
+            os.system('cls')
             final_attempts_number=attempts_hard_difficulty
             print()
             print('<-----Your Out of Attempts!----->')
@@ -357,6 +394,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         
 #Invalid Difficulty Selection on Difficulty Selection:
     else:
+        os.system('cls')
         print()
         print('<-----Invalid Difficulty Selection!----->')
         print("Try Entering a Valid Difficulty Selection: (Type 'Easy' or 'Medium' or 'Hard')")
@@ -370,6 +408,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
         
 #Invalid Game Selection on Main Menu:
 else:
+    os.system('cls')
     print()
     print('<-----Invalid Game Selection!----->')
     print("Try Entering a Valid Game Selection: (Type 'Play' or 'Exit' or 'Credits')")
@@ -382,6 +421,7 @@ else:
     sys.exit()
     
 #End Of Game Summary:
+os.system('cls')  
 print()
 print('<-----Game Summary----->')
 print()
