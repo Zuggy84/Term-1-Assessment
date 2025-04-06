@@ -553,12 +553,24 @@ print('Attempts Left: {}'.format(final_attempts_number))
 if score<=60 and game_words_guessed==0:
     print()
     print("Maybe this Game isn't for You...")
+    print()
+    print('<-----Press Enter to Continue----->')
+    print()
+    input()
 elif score>60 and game_words_guessed==0:
     print()
     print('Bad Luck! Try to get Further!')
+    print()
+    print('<-----Press Enter to Continue----->')
+    print()
+    input()
 elif score>1000 and game_words_guessed>50:
     print()
     print('Wow! Amazing Work.')
+    print()
+    print('<-----Press Enter to Continue----->')
+    print()
+    input()
 else:
     print()
     print('Well Done!')
@@ -568,6 +580,7 @@ else:
     input()
 
 #Game Conclusion:
+os.system('cls')
 print()
 print("<-----Thank You for Playing Mitch's Word Scramble Game!----->")
 print()
