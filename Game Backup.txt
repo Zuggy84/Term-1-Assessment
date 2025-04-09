@@ -88,9 +88,10 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
     print(colour.cyan+'<-----Please Enter Your Name:----->'+colour.end)
     print()
     game_player_name=input()
+    file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/Player List/Player Name.txt','a')
+    file=file.write('{}, '.format(game_player_name))
     os.system('cls')
-    game_player_name=colour.purple+colour.bold+game_player_name+colour.end
-    print(colour.cyan+'Hello {}'.format(game_player_name)+colour.cyan+', Nice of You to Play this Game!'+colour.end)
+    print(colour.cyan+'Hello '+colour.purple+colour.bold+'{}'.format(game_player_name)+colour.end+colour.cyan+', Nice of You to Play this Game!'+colour.end)
     print()
     print(colour.cyan+'<-----Press Enter to Continue----->'+colour.end)
     print()
@@ -112,7 +113,7 @@ elif game_selection=='play' or game_selection=='Play' or game_selection=='PLAY' 
 #Easy Difficulty:
     if difficulty_selection=='easy' or difficulty_selection=='Easy' or difficulty_selection=='EASY' or difficulty_selection=='e' or difficulty_selection=='E' or difficulty_selection=='1':
         os.system('cls')
-        game_difficulty_name=colour.green+'Easy'+colour.end
+        game_difficulty_name='Easy'
         print()
         print(colour.cyan+'You have Chosen '+colour.green+'Easy'+colour.cyan+' Difficulty!'+colour.end)
         print()
@@ -540,7 +541,7 @@ else:
     input()
     sys.exit()
     
-#End Of Game Summary:
+#End Of Game Summary and High Score:
 os.system('cls')
 print()
 print('<-----Game Summary----->')
@@ -550,6 +551,37 @@ print('Difficulty Played: {}'.format(game_difficulty_name))
 print('Final Score: {}'.format(score))
 print('Words Guessed: {}'.format(game_words_guessed))
 print('Attempts Left: {}'.format(final_attempts_number))
+score=str(score)
+game_words_guessed=str(game_words_guessed)
+file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/Latest Game Session/Player Name.txt','w')
+file=file.write(game_player_name)
+file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/Latest Game Session/Difficulty Played.txt','w')
+file=file.write(game_difficulty_name)
+file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/Latest Game Session/Final Score.txt','w')
+file=file.write(score)
+file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/Latest Game Session/Words Guessed.txt','w')
+file=file.write(game_words_guessed)
+file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/High Score.txt','r')
+file=file.read()
+file=str(file)
+high_score=file
+high_score=int(high_score)
+score=int(score)
+if high_score<score:
+    score=str(score)
+    print()
+    print('You Beat Your High Score!')
+    print()
+    print('Old High Score: {}'.format(high_score)+' < '+'New High Score: {}'.format(score))
+    file=open('D:/School/Python/Year 11 - Term 1 Assessment - 2025/Save Files/High Score.txt','w')
+    file=file.write(score)
+else:
+    print()
+    print("You couldn't Beat Your High Score, Bad Luck.")
+    print()
+    print('High Score: {}'.format(high_score)+' > '+"This Game's Score: {}".format(score))
+score=int(score)
+game_words_guessed=int(game_words_guessed)
 if score<=60 and game_words_guessed==0:
     print()
     print("Maybe this Game isn't for You...")
