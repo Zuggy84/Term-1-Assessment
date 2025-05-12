@@ -63,7 +63,7 @@ elif game_selection=='credits' or game_selection=='Credits' or game_selection=='
     print(colour.yellow+'2) Sophie Press - Idea Creator, Suggestions and Feedback Provider.'+colour.end)
     print(colour.yellow+'3) Thomas Dubojski - Resource Assistant, Feedback Provider.'+colour.end)
     print(colour.yellow+'4) Caleb Francey - Resource Assistant, Feedback Provider.'+colour.end)
-    print(colour.yellow+'5) Pawan Sainni - Teacher, Code Provider.'+colour.end)
+    print(colour.yellow+'5) Pawan Saini - Teacher, Code Provider.'+colour.end)
     print(colour.yellow+'6) Python Community - Python Programming Language.'+colour.end)
     print()
     print(colour.blue+'<-----Special Thanks to the Above People and the Python Community for Their Contributions to this Game!----->'+colour.end)
